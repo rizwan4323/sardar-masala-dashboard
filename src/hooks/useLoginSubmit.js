@@ -39,24 +39,24 @@ const useLoginSubmit = () => {
           setLoading(false);
         });
     }
-    if (location.pathname === '/signup') {
-      AdminServices.registerAdmin({ name, email, password, role })
-        .then((res) => {
-          if (res) {
-            setLoading(false);
-            notifySuccess('Register Success!');
-            dispatch({ type: 'USER_LOGIN', payload: res });
-            Cookies.set('adminInfo', JSON.stringify(res), {
-              expires: cookieTimeOut,
-            });
-            history.replace('/');
-          }
-        })
-        .catch((err) => {
-          notifyError(err ? err.response.data.message : err.message);
-          setLoading(false);
-        });
-    } 
+    // if (location.pathname === '/signup') {
+    //   AdminServices.registerAdmin({ name, email, password, role })
+    //     .then((res) => {
+    //       if (res) {
+    //         setLoading(false);
+    //         notifySuccess('Register Success!');
+    //         dispatch({ type: 'USER_LOGIN', payload: res });
+    //         Cookies.set('adminInfo', JSON.stringify(res), {
+    //           expires: cookieTimeOut,
+    //         });
+    //         history.replace('/');
+    //       }
+    //     })
+    //     .catch((err) => {
+    //       notifyError(err ? err.response.data.message : err.message);
+    //       setLoading(false);
+    //     });
+    // } 
 
     if (location.pathname === '/forgot-password') {
       AdminServices.forgetPassword({ verifyEmail })

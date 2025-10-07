@@ -11,7 +11,7 @@ import PrivateRoute from './components/login/PrivateRoute';
 
 const Layout = lazy(() => import('./layout/Layout'));
 const Login = lazy(() => import('./pages/Login'));
-const SignUp = lazy(() => import('./pages/SignUp'));
+// const SignUp = lazy(() => import('./pages/SignUp'));
 const ForgetPassword = lazy(() => import('./pages/ForgotPassword'));
 const ResetPassword = lazy(() => import('./pages/ResetPassword'));
 
@@ -24,7 +24,7 @@ const App = () => {
         
         <Switch>
           <Route path="/login" component={Login} />
-           <Route path="/signup" component={SignUp} />
+           {/* <Route path="/signup" component={SignUp} /> */}
           <Route path="/forgot-password" component={ForgetPassword} />
           <Route path="/reset-password/:token" component={ResetPassword} />
 
