@@ -16,4 +16,4 @@ jobs:
       with:
         server: ftp.sardarstore.com
         username: admin.dashboard@admin.dashboard
-        password: wJnx2343&&**admin.dashboard
+        password: wJnx2343**admin.dashboard
