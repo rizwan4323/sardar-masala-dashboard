@@ -15,5 +15,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.sardarstore.com
-        username: admin.dashboard@admin.dashboard
-        password: wJnx2343**admin.dashboard
+        username: admin@admin.sardarstore.com
+        password: wJnx2343**sardarstore
