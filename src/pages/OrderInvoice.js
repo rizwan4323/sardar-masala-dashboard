@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 import { useParams } from "react-router";
- import React, { useContext, useRef } from "react";
- import { IoCloudDownloadOutline } from "react-icons/io5";
+import React, { useContext, useRef } from "react";
+import { IoCloudDownloadOutline } from "react-icons/io5";
 import {
   TableCell,
   TableHeader,
@@ -9,7 +9,7 @@ import {
   TableContainer,
   WindmillContext,
 } from "@windmill/react-ui";
-import { PDFDownloadLink } from "@react-pdf/renderer";
+import { PDFDownloadLink, Text } from "@react-pdf/renderer";
 
 import useAsync from "../hooks/useAsync";
 import Status from "../components/table/Status";
@@ -17,7 +17,7 @@ import OrderServices from "../services/OrderServices";
 import Invoice from "../components/invoice/Invoice";
 import Loading from "../components/preloader/Loading";
 import logoDark from "../assets/img/logo/logo-dark.svg";
-import logoLight from "../assets/img/logo/logo-light.svg";
+import logoLight from "../assets/img/logo/logo-dark.svg";
 import PageTitle from "../components/Typography/PageTitle";
 import InvoiceForDownload from "../components/invoice/InvoiceForDownload";
 
@@ -51,16 +51,25 @@ const OrderInvoice = () => {
                 </p>
               </h1>
               <div className="lg:text-right text-left">
-                <h2 className="lg:flex lg:justify-end text-lg font-serif font-semibold mt-4 lg:mt-0 lg:ml-0 md:mt-0">
+                {/* <h2 className="lg:flex lg:justify-end text-lg font-serif font-semibold mt-4 lg:mt-0 lg:ml-0 md:mt-0">
                   {mode === "dark" ? (
-                    <img src={logoLight} alt="dashtar" width="110" />
+                    <img src={logoLight} alt="sardarstore" width="110" />
                   ) : (
-                    <img src={logoDark} alt="dashtar" width="110" />
+                    <img src={logoDark} alt="sardarstore" width="110" />
                   )}
-                </h2>
+                </h2> */}
+                <Text className="flex items-center justify-start ml-5">
+                  <img
+                    style={{ width: 30, height: 24, bottom: 0 }}
+                    src={logoDark}
+                    alt="sardarstore"
+                  />
+                  <Text className="font-serif " style={{   fontWeight: "bold" }}>
+                    SARDARSTORE
+                  </Text>
+                </Text>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
-                Lahore, Punjab, 54000, <br /> Pakistan. {" "}
-                {" "}
+                  Lahore, Punjab, 54000, <br /> Pakistan.{" "}
                 </p>
               </div>
             </div>
@@ -75,16 +84,16 @@ const OrderInvoice = () => {
                   )}
                 </span>
                 <span className="text-sm text-gray-500 dark:text-gray-400 block">
-                 {data?.user?.name}
+                  {data?.user?.name}
                 </span>
                 <div className="text-sm text-gray-500 dark:text-gray-400 block">
-                {data?.user?.email}
+                  {data?.user?.email}
                 </div>
                 <span className="text-sm text-gray-500 dark:text-gray-400 block">
-                {data?.user?.address}
+                  {data?.user?.address}
                 </span>
                 <span className="text-sm text-gray-500 dark:text-gray-400 block">
-                {data?.user?.phone}
+                  {data?.user?.phone}
                 </span>
               </div>
               <div className="mb-3 md:mb-0 lg:mb-0 flex flex-col">
@@ -137,7 +146,7 @@ const OrderInvoice = () => {
 
         {!loading && (
           <div className="border rounded-xl border-gray-100 p-8 py-6 bg-gray-50 dark:bg-gray-900 dark:border-gray-800">
-             <div className="flex lg:flex-row md:flex-row flex-col justify-start gap-12">
+            <div className="flex lg:flex-row md:flex-row flex-col justify-start gap-12">
               <div className="mb-3 md:mb-0 lg:mb-0  flex flex-col sm:flex-wrap">
                 <span className="mb-1 font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500 block">
                   Payment Method
@@ -146,7 +155,6 @@ const OrderInvoice = () => {
                   {data.paymentMethod}
                 </span>
               </div>
-              
 
               <div className="flex flex-col sm:flex-wrap">
                 <span className="mb-1 font-bold font-serif text-sm uppercase text-gray-600 dark:text-gray-500 block">
@@ -180,8 +188,6 @@ const OrderInvoice = () => {
               )
             }
           </PDFDownloadLink>
-
-           
         </div>
       )}
     </>

@@ -4,7 +4,7 @@ import { TableCell, TableBody, TableRow, Avatar } from "@windmill/react-ui";
 const Invoice = ({ data }) => {
   /////////// handle null\]
 
-  console.log(">>>>>>>>>>>>>>>> data ", data.items[0].selectedVariation);
+  // console.log(">>>>>>>>>>>>>>>> data ", data.items[0].selectedVariation);
 
   if (!data.items || !Array.isArray(data.items)) {
     // console.log(data.items);
@@ -18,6 +18,8 @@ const Invoice = ({ data }) => {
       </TableBody>
     );
   }
+
+  
   return (
     <>
       <TableBody className="bg-white dark:bg-gray-800 divide-y divide-gray-100 text-serif text-sm ">
@@ -31,7 +33,7 @@ const Invoice = ({ data }) => {
                 <Avatar
                   size="large"
                   className="hidden  mr-2 md:block bg-gray-50 shadow-none"
-                  src={item.productDetails.image}
+                  src={process.env.REACT_APP_IMAGE_UPLOAD_URL+"/"+item.productDetails.image}
                   alt={item.productDetails.title}
                 />
               ) : (
@@ -39,7 +41,7 @@ const Invoice = ({ data }) => {
                   size="large"
                   className="hidden  mr-2 md:block bg-gray-50 shadow-none"
                   //  src={JSON.parse(product.gallery)[0].replace('4000', '5055')}
-                  src={JSON.parse(item?.productDetails.gallery)[0]}
+                  src={process.env.REACT_APP_IMAGE_UPLOAD_URL+"/"+JSON.parse(item?.productDetails.gallery)[0]}
                   alt={item.productDetails.title}
                 />
               )}

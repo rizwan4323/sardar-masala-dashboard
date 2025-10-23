@@ -6,8 +6,8 @@
   "scope": ".",
   "start_url": ".",
   "id": ".",
-  "short_name": "Dashtar - Admin",
-  "name": "Dashtar - React eCommerce Admin Dashboard",
+  "short_name": "SardarStore - Admin",
+  "name": "SardarStore - React eCommerce Admin Dashboard",
   "description": "React Grocery & Organic Food Store e-commerce Admin Dashboard",
   "icons": [
     {
