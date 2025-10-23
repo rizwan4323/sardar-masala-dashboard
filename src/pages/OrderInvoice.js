@@ -64,8 +64,8 @@ const OrderInvoice = () => {
                     src={logoDark}
                     alt="sardarstore"
                   />
-                  <Text className="font-serif " style={{   fontWeight: "bold" }}>
-                    SARDARSTORE
+                  <Text className="font-serif" style={{   fontWeight: "bold" }}>
+                    SARDARSTORE 
                   </Text>
                 </Text>
                 <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
